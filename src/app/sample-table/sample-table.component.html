@@ -1,0 +1,19 @@
+<button (click)="loadData()">Load Data</button>
+
+<div *ngIf="showData && data.length; else noData">
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Salary</th>
+    </tr>
+    <tr *ngFor="let row of data">
+      <td>{{ row.NAME }}</td>
+      <td>{{ row.AGE }}</td>
+      <td>{{ row.SALARY }}</td>
+    </tr>
+  </table>
+</div>
+<ng-template #noData>
+  <div>No data available.</div>
+</ng-template>
